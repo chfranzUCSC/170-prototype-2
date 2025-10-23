@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+signal item_selected(item)
 
 var is_controlled: = false;
 var start_position: Vector2
@@ -19,3 +20,8 @@ func _ready():
 
 func control_item_velo(new_velo):
 	apply_force(new_velo)
+	
+
+func _input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+		item_selected.emit(self)

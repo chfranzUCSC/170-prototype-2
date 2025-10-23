@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dpdjw1mrnahoe" path="res://assets/trash_receipt.png" id="2_j3udo"]
 
 [node name="itemReceipt" instance=ExtResource("1_45bs6")]
-mass = 0.058
+mass = 0.03
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 scale = Vector2(0.7, 0.7)

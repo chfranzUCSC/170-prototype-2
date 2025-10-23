@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cb2c7kv2238iq" path="res://TargetableItem.tscn" id="1_aiugo"]
 
 [node name="itemDino" instance=ExtResource("1_aiugo")]
+mass = 0.3
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 scale = Vector2(0.4, 0.4)

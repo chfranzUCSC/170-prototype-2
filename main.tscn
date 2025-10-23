@@ -25,7 +25,8 @@ texture = ExtResource("3_h2yge")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="purse"]
 polygon = PackedVector2Array(264, 206, 212, 388, 280, 532, 698, 526, 753, 417, 699, 196, 660, 203, 707, 420, 673, 507, 290, 511, 230, 387, 282, 200)
 
-[node name="Control" type="Control" parent="." node_paths=PackedStringArray("chosen_item")]
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("chosen_item") groups=["controllable_items", "resettable_items"]]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_left = 911.0
@@ -33,71 +34,88 @@ offset_top = 403.0
 offset_right = 1061.0
 offset_bottom = 618.0
 script = ExtResource("2_0xm2m")
-chosen_item = NodePath("../item container/itemAirpods")
+chosen_item = NodePath("../items/itemAirpods")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
+visibility_layer = 3
 position = Vector2(75, 78)
 scale = Vector2(1.305, 1.385)
 texture = ExtResource("5_lquwl")
 
-[node name="item container" type="Node2D" parent="."]
+[node name="items" type="Node2D" parent="."]
 
-[node name="itemDino" parent="item container" instance=ExtResource("4_1bvp3")]
+[node name="itemDino" parent="items" instance=ExtResource("4_1bvp3")]
 position = Vector2(288, 405)
+input_pickable = false
 
-[node name="itemDino2" parent="item container" instance=ExtResource("4_1bvp3")]
+[node name="itemDino2" parent="items" instance=ExtResource("4_1bvp3")]
 position = Vector2(411, 472.00003)
 rotation = -0.5246694
+input_pickable = false
 
-[node name="itemAirpods" parent="item container" instance=ExtResource("5_7mycd")]
+[node name="itemAirpods" parent="items" instance=ExtResource("5_7mycd")]
 position = Vector2(495, 450)
+input_pickable = false
 
-[node name="itemNecklace" parent="item container" instance=ExtResource("6_7mycd")]
+[node name="itemNecklace" parent="items" instance=ExtResource("6_7mycd")]
 position = Vector2(641.00006, 444)
 rotation = 1.334508
+input_pickable = false
 
-[node name="trashPaper" parent="item container" instance=ExtResource("7_272bh")]
+[node name="trashPaper" parent="items" instance=ExtResource("7_272bh")]
 position = Vector2(577, 412)
+input_pickable = false
 
-[node name="itemReceipt" parent="item container" instance=ExtResource("8_5vw27")]
+[node name="itemReceipt" parent="items" instance=ExtResource("8_5vw27")]
 position = Vector2(333, 450.99997)
 rotation = 0.8380431
+input_pickable = false
 
-[node name="trashPaper2" parent="item container" instance=ExtResource("7_272bh")]
+[node name="trashPaper2" parent="items" instance=ExtResource("7_272bh")]
 position = Vector2(512, 350)
 rotation = -0.23870192
+input_pickable = false
 
-[node name="itemReceipt2" parent="item container" instance=ExtResource("8_5vw27")]
+[node name="itemReceipt2" parent="items" instance=ExtResource("8_5vw27")]
 position = Vector2(426, 392.00003)
 rotation = 0.8436536
+input_pickable = false
 
-[node name="itemDino3" parent="item container" instance=ExtResource("4_1bvp3")]
+[node name="itemDino3" parent="items" instance=ExtResource("4_1bvp3")]
 position = Vector2(630, 376)
 rotation = 0.9657141
+input_pickable = false
 
-[node name="itemNecklace2" parent="item container" instance=ExtResource("6_7mycd")]
+[node name="itemNecklace2" parent="items" instance=ExtResource("6_7mycd")]
 position = Vector2(329.99997, 363.99997)
 rotation = -1.1740112
+input_pickable = false
 
-[node name="trashPaper3" parent="item container" instance=ExtResource("7_272bh")]
+[node name="trashPaper3" parent="items" instance=ExtResource("7_272bh")]
 position = Vector2(626, 305)
+input_pickable = false
 
-[node name="itemReceipt3" parent="item container" instance=ExtResource("8_5vw27")]
+[node name="itemReceipt3" parent="items" instance=ExtResource("8_5vw27")]
 position = Vector2(424, 302)
 rotation = 4.280668
+input_pickable = false
 
-[node name="itemDino4" parent="item container" instance=ExtResource("4_1bvp3")]
+[node name="itemDino4" parent="items" instance=ExtResource("4_1bvp3")]
 position = Vector2(290, 309)
+input_pickable = false
 
-[node name="itemNecklace3" parent="item container" instance=ExtResource("6_7mycd")]
+[node name="itemNecklace3" parent="items" instance=ExtResource("6_7mycd")]
 position = Vector2(528, 283)
 rotation = -0.6471681
+input_pickable = false
 
-[node name="trashPaper4" parent="item container" instance=ExtResource("7_272bh")]
+[node name="trashPaper4" parent="items" instance=ExtResource("7_272bh")]
 position = Vector2(337, 254)
+input_pickable = false
 
-[node name="trashPaper5" parent="item container" instance=ExtResource("7_272bh")]
+[node name="trashPaper5" parent="items" instance=ExtResource("7_272bh")]
 position = Vector2(592, 212)
+input_pickable = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

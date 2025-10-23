@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://djr1i7exx7fte" path="res://assets/necklace.png" id="2_wvbty"]
 
 [node name="itemNecklace" instance=ExtResource("1_mea6f")]
-mass = 0.6
+mass = 0.1
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 scale = Vector2(0.6, 0.6)

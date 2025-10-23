@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://311y4p74hkma" path="res://targetable_item.gd" id="1_vonsx"]
 
 [node name="TargetableItem" type="RigidBody2D"]
+input_pickable = true
 script = ExtResource("1_vonsx")
