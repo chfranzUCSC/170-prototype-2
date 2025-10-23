@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb2c7kv2238iq"]
+
+[ext_resource type="Script" uid="uid://311y4p74hkma" path="res://targetable_item.gd" id="1_vonsx"]
+
+[node name="TargetableItem" type="RigidBody2D"]
+script = ExtResource("1_vonsx")

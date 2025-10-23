@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var is_controlled: = false;
 var start_position: Vector2

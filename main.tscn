@@ -1,17 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwtftb5ha2b25"]
+[gd_scene load_steps=5 format=3 uid="uid://cwtftb5ha2b25"]
 
-[ext_resource type="Script" uid="uid://rw0lh3ghtrdv" path="res://wallet.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://deajgediynv36" path="res://control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b0177rabe42hi" path="res://assets/purse.png" id="3_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bm05fg74eakng" path="res://itemDino.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://tcglwgwm12nw" path="res://itemDino.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://b6w1nbiuxr2jl" path="res://assets/hand.png" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://311y4p74hkma" path="res://targetable_item.gd" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
-
-[node name="RigidBody2D" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(335, 419)
-script = ExtResource("1_ig7tw")
 
 [node name="purse" type="StaticBody2D" parent="."]
 
@@ -33,12 +27,12 @@ offset_top = 403.0
 offset_right = 1061.0
 offset_bottom = 618.0
 script = ExtResource("2_0xm2m")
-chosen_item = NodePath("../RigidBody2D")
+chosen_item = NodePath("../itemDino")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(75, 78)
 scale = Vector2(1.305, 1.385)
 texture = ExtResource("5_lquwl")
 
-[node name="TargetableItem" type="RigidBody2D" parent="."]
-script = ExtResource("6_7mycd")
+[node name="itemDino" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(353, 399)

@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm05fg74eakng"]
+[gd_scene load_steps=3 format=3 uid="uid://tcglwgwm12nw"]
 
 [ext_resource type="Texture2D" uid="uid://canpdm8gy1q01" path="res://assets/dino.png" id="1_3d76s"]
+[ext_resource type="PackedScene" uid="uid://cb2c7kv2238iq" path="res://TargetableItem.tscn" id="1_aiugo"]
 
-[node name="Dino" type="RigidBody2D"]
+[node name="itemDino" instance=ExtResource("1_aiugo")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("1_3d76s")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
 position = Vector2(1, 0)
 polygon = PackedVector2Array(-33, 73, -53, 71, -52, -12, -77, -21, -79, -44, -49, -61, -29, -15, 40, -16, 25, -43, 22, -62, 55, -79, 49, -53, 78, -13, 52, 28, 60, 67, 40, 73, 31, 43, -27, 39)
