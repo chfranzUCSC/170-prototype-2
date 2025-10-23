@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dibr6xuxdmjcl"]
+
+[ext_resource type="PackedScene" uid="uid://cb2c7kv2238iq" path="res://TargetableItem.tscn" id="1_u7plw"]
+[ext_resource type="Texture2D" uid="uid://44e265g8nbj1" path="res://assets/airpods.png" id="2_5bpyv"]
+
+[node name="itemAirpods" instance=ExtResource("1_u7plw")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_5bpyv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-42, 68, 31, 70, 51, 51, 50, -40, 39, -53, -52, -54, -65, -34, -62, 50)
