@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwtftb5ha2b25"]
+[gd_scene load_steps=9 format=3 uid="uid://cwtftb5ha2b25"]
 
 [ext_resource type="Script" uid="uid://deajgediynv36" path="res://control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b0177rabe42hi" path="res://assets/purse.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://tcglwgwm12nw" path="res://itemDino.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dibr6xuxdmjcl" path="res://item_airpods.tscn" id="5_7mycd"]
 [ext_resource type="Texture2D" uid="uid://b6w1nbiuxr2jl" path="res://assets/hand.png" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://t2vq757rrwjm" path="res://item_necklace.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://i5h34r03xsru" path="res://trash_paper.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://6a54mlhw7av6" path="res://item_receipt.tscn" id="8_5vw27"]
 
 [node name="Main" type="Node2D"]
 
@@ -28,7 +31,7 @@ offset_top = 403.0
 offset_right = 1061.0
 offset_bottom = 618.0
 script = ExtResource("2_0xm2m")
-chosen_item = NodePath("../itemDino")
+chosen_item = NodePath("../itemAirpods")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(75, 78)
@@ -36,7 +39,34 @@ scale = Vector2(1.305, 1.385)
 texture = ExtResource("5_lquwl")
 
 [node name="itemDino" parent="." instance=ExtResource("4_1bvp3")]
-position = Vector2(353, 399)
+position = Vector2(288, 405)
+
+[node name="itemDino2" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(411, 472.00003)
+rotation = -0.5246694
 
 [node name="itemAirpods" parent="." instance=ExtResource("5_7mycd")]
-position = Vector2(397, 244)
+position = Vector2(495, 450)
+
+[node name="itemNecklace" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(641.00006, 444)
+rotation = 1.334508
+
+[node name="trashPaper" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(577, 412)
+
+[node name="itemReceipt" parent="." instance=ExtResource("8_5vw27")]
+position = Vector2(333, 450.99997)
+rotation = 0.8380431
+
+[node name="trashPaper2" parent="." instance=ExtResource("7_272bh")]
+position = Vector2(512, 350)
+rotation = -0.23870192
+
+[node name="itemReceipt2" parent="." instance=ExtResource("8_5vw27")]
+position = Vector2(426, 392.00003)
+rotation = 0.8436536
+
+[node name="itemDino3" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(630, 376)
+rotation = 0.9657141

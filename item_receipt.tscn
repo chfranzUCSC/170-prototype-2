@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://6a54mlhw7av6"]
+
+[ext_resource type="PackedScene" uid="uid://cb2c7kv2238iq" path="res://TargetableItem.tscn" id="1_45bs6"]
+[ext_resource type="Texture2D" uid="uid://dpdjw1mrnahoe" path="res://assets/trash_receipt.png" id="2_j3udo"]
+
+[node name="itemReceipt" instance=ExtResource("1_45bs6")]
+mass = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_j3udo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(10, -48, -38, -35, -10, 10, -36, 21, -39, 34, -21, 53, 33, 37, 24, 25, 36, -2)

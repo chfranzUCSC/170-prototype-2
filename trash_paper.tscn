@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://i5h34r03xsru"]
+
+[ext_resource type="PackedScene" uid="uid://cb2c7kv2238iq" path="res://TargetableItem.tscn" id="1_joe6g"]
+[ext_resource type="Texture2D" uid="uid://cpqayg8x82yno" path="res://assets/trash_paper.png" id="2_kfl30"]
+
+[node name="trashPaper" instance=ExtResource("1_joe6g")]
+mass = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_kfl30")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-1, -39, -14, -25, -10, -15, -15, -5, -42, -16, -44, 18, -26, 43, 0, 37, 41, 45, 44, 16, 47, -3, 31, -21, 23, -15)
