@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwtftb5ha2b25"]
+[gd_scene load_steps=10 format=3 uid="uid://cwtftb5ha2b25"]
 
 [ext_resource type="Script" uid="uid://deajgediynv36" path="res://control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b0177rabe42hi" path="res://assets/purse.png" id="3_h2yge"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://t2vq757rrwjm" path="res://item_necklace.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://i5h34r03xsru" path="res://trash_paper.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://6a54mlhw7av6" path="res://item_receipt.tscn" id="8_5vw27"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5vw27"]
 
 [node name="Main" type="Node2D"]
 
@@ -31,42 +33,83 @@ offset_top = 403.0
 offset_right = 1061.0
 offset_bottom = 618.0
 script = ExtResource("2_0xm2m")
-chosen_item = NodePath("../itemAirpods")
+chosen_item = NodePath("../item container/itemAirpods")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(75, 78)
 scale = Vector2(1.305, 1.385)
 texture = ExtResource("5_lquwl")
 
-[node name="itemDino" parent="." instance=ExtResource("4_1bvp3")]
+[node name="item container" type="Node2D" parent="."]
+
+[node name="itemDino" parent="item container" instance=ExtResource("4_1bvp3")]
 position = Vector2(288, 405)
 
-[node name="itemDino2" parent="." instance=ExtResource("4_1bvp3")]
+[node name="itemDino2" parent="item container" instance=ExtResource("4_1bvp3")]
 position = Vector2(411, 472.00003)
 rotation = -0.5246694
 
-[node name="itemAirpods" parent="." instance=ExtResource("5_7mycd")]
+[node name="itemAirpods" parent="item container" instance=ExtResource("5_7mycd")]
 position = Vector2(495, 450)
 
-[node name="itemNecklace" parent="." instance=ExtResource("6_7mycd")]
+[node name="itemNecklace" parent="item container" instance=ExtResource("6_7mycd")]
 position = Vector2(641.00006, 444)
 rotation = 1.334508
 
-[node name="trashPaper" parent="." instance=ExtResource("7_272bh")]
+[node name="trashPaper" parent="item container" instance=ExtResource("7_272bh")]
 position = Vector2(577, 412)
 
-[node name="itemReceipt" parent="." instance=ExtResource("8_5vw27")]
+[node name="itemReceipt" parent="item container" instance=ExtResource("8_5vw27")]
 position = Vector2(333, 450.99997)
 rotation = 0.8380431
 
-[node name="trashPaper2" parent="." instance=ExtResource("7_272bh")]
+[node name="trashPaper2" parent="item container" instance=ExtResource("7_272bh")]
 position = Vector2(512, 350)
 rotation = -0.23870192
 
-[node name="itemReceipt2" parent="." instance=ExtResource("8_5vw27")]
+[node name="itemReceipt2" parent="item container" instance=ExtResource("8_5vw27")]
 position = Vector2(426, 392.00003)
 rotation = 0.8436536
 
-[node name="itemDino3" parent="." instance=ExtResource("4_1bvp3")]
+[node name="itemDino3" parent="item container" instance=ExtResource("4_1bvp3")]
 position = Vector2(630, 376)
 rotation = 0.9657141
+
+[node name="itemNecklace2" parent="item container" instance=ExtResource("6_7mycd")]
+position = Vector2(329.99997, 363.99997)
+rotation = -1.1740112
+
+[node name="trashPaper3" parent="item container" instance=ExtResource("7_272bh")]
+position = Vector2(626, 305)
+
+[node name="itemReceipt3" parent="item container" instance=ExtResource("8_5vw27")]
+position = Vector2(424, 302)
+rotation = 4.280668
+
+[node name="itemDino4" parent="item container" instance=ExtResource("4_1bvp3")]
+position = Vector2(290, 309)
+
+[node name="itemNecklace3" parent="item container" instance=ExtResource("6_7mycd")]
+position = Vector2(528, 283)
+rotation = -0.6471681
+
+[node name="trashPaper4" parent="item container" instance=ExtResource("7_272bh")]
+position = Vector2(337, 254)
+
+[node name="trashPaper5" parent="item container" instance=ExtResource("7_272bh")]
+position = Vector2(592, 212)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 648)
+shape = SubResource("WorldBoundaryShape2D_5vw27")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_5vw27")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1152, 0)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_5vw27")
