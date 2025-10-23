@@ -15,8 +15,6 @@ func _ready():
 	
 	for item in items:
 		if item.has_signal("item_selected"):
-			# Connect the item's "item_selected" signal
-			# to our new "on_item_selected" function
 			item.item_selected.connect(on_item_selected)
 
 func _gui_input(event):

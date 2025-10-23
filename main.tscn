@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cwtftb5ha2b25"]
+[gd_scene load_steps=12 format=3 uid="uid://cwtftb5ha2b25"]
 
 [ext_resource type="Script" uid="uid://deajgediynv36" path="res://control.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://b0177rabe42hi" path="res://assets/purse.png" id="3_h2yge"]
@@ -8,8 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://t2vq757rrwjm" path="res://item_necklace.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://i5h34r03xsru" path="res://trash_paper.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://6a54mlhw7av6" path="res://item_receipt.tscn" id="8_5vw27"]
+[ext_resource type="Script" uid="uid://dh8wu1u3ijpr6" path="res://button.gd" id="9_kek77"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5vw27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(1, 0.20784314, 0.3137255, 0.41568628)
 
 [node name="Main" type="Node2D"]
 
@@ -127,3 +131,44 @@ shape = SubResource("WorldBoundaryShape2D_5vw27")
 position = Vector2(1152, 0)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_5vw27")
+
+[node name="lose zone" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 242.0
+offset_top = 85.0
+offset_right = 717.0
+offset_bottom = 188.0
+
+[node name="PanelContainer" type="PanelContainer" parent="lose zone"]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -60.0
+offset_right = 516.0
+offset_bottom = 107.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vw27")
+
+[node name="Label" type="Label" parent="lose zone"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -55.0
+offset_right = 477.0
+offset_bottom = -32.0
+text = "please imagine that you have to start over if any trash gets out :-)"
+
+[node name="reset button" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="reset button"]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 26.0
+offset_right = 1120.0
+offset_bottom = 90.0
+text = "RESET"
+script = ExtResource("9_kek77")
+
+[connection signal="pressed" from="reset button/Button" to="reset button/Button" method="_on_pressed"]

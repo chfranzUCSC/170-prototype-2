@@ -3,7 +3,8 @@ extends RigidBody2D
 signal item_selected(item)
 
 var is_controlled: = false;
-var start_position: Vector2
+var initial_position: Vector2
+var initial_rotation: float
 
 func start_lift():
 	is_controlled = true
@@ -14,7 +15,14 @@ func stop_lift():
 	gravity_scale = 1.0
 
 func _ready():
-	start_position = self.global_position
+	initial_position = self.global_position
+	initial_rotation = self.global_rotation
+
+
+func reset_item():
+	self.position = initial_position
+	self.rotation = initial_rotation
+	
 
 
 
