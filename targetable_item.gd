@@ -5,17 +5,18 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_controlled: = false;
 var start_position: Vector2
 
+func start_lift():
+	is_controlled = true
+	gravity_scale = 0.0
+
+func stop_lift():
+	is_controlled = false
+	gravity_scale = 1.0
+
 func _ready():
 	start_position = self.global_position
 
-func _physics_process(_delta):
-	if is_controlled:
-		gravity_scale = 0.0
-	else:
-		gravity_scale = 1.0
-	is_controlled = false
 
 
 func control_item_velo(new_velo):
 	apply_force(new_velo)
-	is_controlled = true
