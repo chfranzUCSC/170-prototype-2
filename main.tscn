@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwtftb5ha2b25"]
+
+[ext_resource type="Script" uid="uid://rw0lh3ghtrdv" path="res://wallet.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://deajgediynv36" path="res://control.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b0177rabe42hi" path="res://assets/purse.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bm05fg74eakng" path="res://itemDino.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://b6w1nbiuxr2jl" path="res://assets/hand.png" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://311y4p74hkma" path="res://targetable_item.gd" id="6_7mycd"]
+
+[node name="Main" type="Node2D"]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(335, 419)
+script = ExtResource("1_ig7tw")
+
+[node name="purse" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="purse"]
+z_index = -1
+z_as_relative = false
+position = Vector2(528, 338)
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("3_h2yge")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="purse"]
+polygon = PackedVector2Array(264, 206, 212, 388, 280, 532, 698, 526, 753, 417, 699, 196, 660, 203, 707, 420, 673, 507, 290, 511, 230, 387, 282, 200)
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("chosen_item")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 911.0
+offset_top = 403.0
+offset_right = 1061.0
+offset_bottom = 618.0
+script = ExtResource("2_0xm2m")
+chosen_item = NodePath("../RigidBody2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(75, 78)
+scale = Vector2(1.305, 1.385)
+texture = ExtResource("5_lquwl")
+
+[node name="TargetableItem" type="RigidBody2D" parent="."]
+script = ExtResource("6_7mycd")
