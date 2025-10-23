@@ -63,7 +63,7 @@ rotation = 1.334508
 input_pickable = false
 
 [node name="trashPaper" parent="items" instance=ExtResource("7_272bh")]
-position = Vector2(577, 412)
+position = Vector2(592, 396)
 input_pickable = false
 
 [node name="itemReceipt" parent="items" instance=ExtResource("8_5vw27")]
@@ -82,7 +82,7 @@ rotation = 0.8436536
 input_pickable = false
 
 [node name="itemDino3" parent="items" instance=ExtResource("4_1bvp3")]
-position = Vector2(630, 376)
+position = Vector2(580.00006, 472.00006)
 rotation = 0.9657141
 input_pickable = false
 
@@ -111,10 +111,6 @@ input_pickable = false
 
 [node name="trashPaper4" parent="items" instance=ExtResource("7_272bh")]
 position = Vector2(337, 254)
-input_pickable = false
-
-[node name="trashPaper5" parent="items" instance=ExtResource("7_272bh")]
-position = Vector2(592, 212)
 input_pickable = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
