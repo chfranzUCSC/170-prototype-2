@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://ouqwhsa6pxuu"]
+
+[ext_resource type="Texture2D" uid="uid://bxybhd7kjdq5q" path="res://assets/toybox.png" id="1_2jglr"]
+[ext_resource type="Script" uid="uid://deajgediynv36" path="res://control.gd" id="2_2jglr"]
+[ext_resource type="Texture2D" uid="uid://b6w1nbiuxr2jl" path="res://assets/hand.png" id="3_ca36m"]
+[ext_resource type="PackedScene" uid="uid://dq7o58pnnm0vc" path="res://block_a.tscn" id="4_ca36m"]
+[ext_resource type="AudioStream" uid="uid://dn67i1cpt7f01" path="res://assets/play_music.mp3" id="5_ca36m"]
+[ext_resource type="PackedScene" uid="uid://dbxlx8vhhoqh0" path="res://block_b.tscn" id="5_j5m8q"]
+[ext_resource type="PackedScene" uid="uid://dvj2frxbv4ndt" path="res://block_c.tscn" id="6_3ib3j"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j5m8q"]
+
+[node name="play" type="Node2D"]
+
+[node name="world boundaries" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world boundaries"]
+position = Vector2(0, 648)
+shape = SubResource("WorldBoundaryShape2D_j5m8q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="world boundaries"]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_j5m8q")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="world boundaries"]
+position = Vector2(1152, 0)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_j5m8q")
+
+[node name="Control" type="Control" parent="." node_paths=PackedStringArray("chosen_item")]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 911.0
+offset_top = 403.0
+offset_right = 1061.0
+offset_bottom = 618.0
+script = ExtResource("2_2jglr")
+chosen_item = NodePath("../items/block A")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+visibility_layer = 3
+z_index = 1
+position = Vector2(75, 78)
+scale = Vector2(1.305, 1.385)
+texture = ExtResource("3_ca36m")
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="block A" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(325, 522)
+rotation = -0.51943713
+
+[node name="block B" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(400, 524.00006)
+rotation = 0.21852729
+
+[node name="block C" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(475, 526)
+rotation = 2.910388
+
+[node name="block A2" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(541, 533)
+rotation = -0.657287
+
+[node name="block B2" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(618, 530)
+rotation = 1.0526015
+
+[node name="block C2" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(689.00006, 512)
+rotation = 0.038881883
+
+[node name="block A3" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(743, 467.00003)
+rotation = -1.775828
+
+[node name="block B3" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(326, 453)
+
+[node name="block C3" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(392, 455.00003)
+rotation = -0.5519074
+
+[node name="block A4" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(465, 458)
+rotation = 1.1011634
+
+[node name="block B4" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(537, 466)
+rotation = -0.7103725
+
+[node name="block C4" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(610, 461)
+rotation = 0.727405
+
+[node name="block A5" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(679, 442.00003)
+rotation = -0.39823765
+
+[node name="block B5" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(735, 391.00006)
+rotation = -0.38967857
+
+[node name="block C5" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(330, 384)
+rotation = 0.69581246
+
+[node name="block A6" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(397, 387.00003)
+rotation = -0.45177293
+
+[node name="block B6" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(477, 379)
+rotation = 0.6597735
+
+[node name="block C6" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(547, 390)
+rotation = -0.4455284
+
+[node name="block A7" parent="items" instance=ExtResource("4_ca36m")]
+position = Vector2(623.00006, 393)
+rotation = -1.2279905
+
+[node name="block B7" parent="items" instance=ExtResource("5_j5m8q")]
+position = Vector2(682.0001, 347.00006)
+rotation = -3.0952756
+
+[node name="block C7" parent="items" instance=ExtResource("6_3ib3j")]
+position = Vector2(389, 322)
+rotation = 1.0638084
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ca36m")
+volume_db = -2.0
+autoplay = true
+
+[node name="Node2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+z_index = -1
+z_as_relative = false
+position = Vector2(559, 355)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_2jglr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D"]
+polygon = PackedVector2Array(285, 264, 287, 565, 737, 582, 775, 532, 773, 245, 787, 245, 792, 533, 747, 596, 281, 585, 271, 264)

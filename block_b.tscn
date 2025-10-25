@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbxlx8vhhoqh0"]
+
+[ext_resource type="PackedScene" uid="uid://cb2c7kv2238iq" path="res://TargetableItem.tscn" id="1_owjoc"]
+[ext_resource type="Texture2D" uid="uid://bxiw7ji751vuw" path="res://assets/block_b.png" id="2_vc23h"]
+
+[node name="block B" instance=ExtResource("1_owjoc")]
+mass = 0.2
+gravity_scale = 0.8
+
+[node name="highlight" type="Line2D" parent="." index="0"]
+visible = false
+z_index = 1
+points = PackedVector2Array(1, -30, -27, -13, -28, 13, -3, 34, 27, 18, 28, -13)
+closed = true
+default_color = Color(1, 0, 1, 0.5019608)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_vc23h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+polygon = PackedVector2Array(1, -32, -29, -16, -28, 15, -2, 37, 29, 19, 29, -14)

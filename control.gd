@@ -9,13 +9,15 @@ var original_position: Vector2
 
 func _ready():
 	set_process(true)
+	
 	original_position = self.position
 	
 	var items = get_tree().get_nodes_in_group("controllable_items")
 	
-	for item in items:
-		if item.has_signal("item_selected"):
-			item.item_selected.connect(on_item_selected)
+	# connect item selection signal to change_target function
+	for i in items:
+		if i.has_signal("item_selected"):
+			i.item_selected.connect(change_target)
 
 func _gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -34,22 +36,26 @@ func _gui_input(event):
 		self.position += event.relative
 		mouse_motion_delta += event.relative
 
-func on_item_selected(item_that_was_clicked):
-	if chosen_item and chosen_item.has_method("stop_lift"):
+func change_target(item):
+	if (chosen_item != item) and chosen_item.has_method("stop_lift"):
 		chosen_item.stop_lift()
+		if chosen_item.has_method("hide_highlight"):
+			chosen_item.hide_highlight()
 
-	chosen_item = item_that_was_clicked
+	chosen_item = item
+	
+	if chosen_item.has_method("show_highlight"):
+			chosen_item.show_highlight()
 	
 	if is_dragging and chosen_item.has_method("start_lift"):
 		chosen_item.start_lift()
+		
+		
+		
 
 func _process(delta):
 	if is_dragging and chosen_item:
-		#var target_velocity = (self.position - original_position) * 0.7
-		if mouse_motion_delta != Vector2.ZERO:
-			var target_velocity = mouse_motion_delta / delta
-			chosen_item.control_item_velo(target_velocity)
-		else:
-			chosen_item.control_item_velo(Vector2.ZERO)
+		var target_velocity = mouse_motion_delta / delta
+		chosen_item.control_item_velo(target_velocity)
 			
 	mouse_motion_delta = Vector2.ZERO
